@@ -1,0 +1,51 @@
+/* Global Styling */
+body {
+  background-color: #f9f9f9;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px; /* Taille par défaut pour le texte */
+  line-height: 1.6; /* Espacement entre les lignes pour plus de lisibilité */
+}
+
+header {
+  background-color: #f4f4f4;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
+
+.menu li a:hover {
+  color: #007BFF;
+}
+
+/* Card Styling */
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.card-content {
+  font-size: 1.4rem;
+  color: #555;
+}

@@ -1,0 +1,4 @@
+<h1><%= @gossip.title %></h1>
+<p><%= @gossip.content %></p>
+<p>Publié le : <%= @gossip.created_at.strftime('%d/%m/%Y') %></p>
+<%= link_to 'Retour à l’accueil', root_path %>

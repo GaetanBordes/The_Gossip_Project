@@ -1,0 +1,36 @@
+ => 
+[[32m#<Gossip:0x00007fea12e7f9d8[0m
+  id: [34m[1m1[0m,
+  title: [31m[1m"[0m[31mPremier Potin[0m[31m[1m"[0m,
+  content: [31m[1m"[0m[31mCeci est le contenu du premier potin.[0m[31m[1m"[0m,
+  created_at: [31m[1m"[0m[31m2025-02-10 09:12:51.875533000 +0000[0m[31m[1m"[0m,
+  updated_at: [31m[1m"[0m[31m2025-02-10 09:12:51.875533000 +0000[0m[31m[1m"[0m,
+  author_id: [36m[1mnil[0m[32m>[0m,
+ [32m#<Gossip:0x00007fea12e28840[0m
+  id: [34m[1m2[0m,
+  title: [31m[1m"[0m[31mDeuxième Potin[0m[31m[1m"[0m,
+  content: [31m[1m"[0m[31mEncore un autre potin croustillant ![0m[31m[1m"[0m,
+  created_at: [31m[1m"[0m[31m2025-02-10 09:12:57.648991000 +0000[0m[31m[1m"[0m,
+  updated_at: [31m[1m"[0m[31m2025-02-10 09:12:57.648991000 +0000[0m[31m[1m"[0m,
+  author_id: [36m[1mnil[0m[32m>[0m,
+ [32m#<Gossip:0x00007fea12e28340[0m
+  id: [34m[1m3[0m,
+  title: [31m[1m"[0m[31mPremier potin[0m[31m[1m"[0m,
+  content: [31m[1m"[0m[31mVoici le contenu du premier potin[0m[31m[1m"[0m,
+  created_at: [31m[1m"[0m[31m2025-02-10 09:45:46.119584000 +0000[0m[31m[1m"[0m,
+  updated_at: [31m[1m"[0m[31m2025-02-10 09:45:46.119584000 +0000[0m[31m[1m"[0m,
+  author_id: [36m[1mnil[0m[32m>[0m,
+ [32m#<Gossip:0x00007fea12e28200[0m
+  id: [34m[1m4[0m,
+  title: [31m[1m"[0m[31mDeuxième potin[0m[31m[1m"[0m,
+  content: [31m[1m"[0m[31mVoici le contenu du deuxième potin[0m[31m[1m"[0m,
+  created_at: [31m[1m"[0m[31m2025-02-10 09:45:51.021615000 +0000[0m[31m[1m"[0m,
+  updated_at: [31m[1m"[0m[31m2025-02-10 09:45:51.021615000 +0000[0m[31m[1m"[0m,
+  author_id: [36m[1mnil[0m[32m>[0m,
+ [32m#<Gossip:0x00007fea12e280c0[0m
+  id: [34m[1m5[0m,
+  title: [31m[1m"[0m[31mMon premier potin[0m[31m[1m"[0m,
+  content: [31m[1m"[0m[31mC'est top ![0m[31m[1m"[0m,
+  created_at: [31m[1m"[0m[31m2025-02-10 10:01:28.343417000 +0000[0m[31m[1m"[0m,
+  updated_at: [31m[1m"[0m[31m2025-02-10 10:01:28.343417000 +0000[0m[31m[1m"[0m,
+  author_id: [34m[1m1[0m[32m>[0m] 

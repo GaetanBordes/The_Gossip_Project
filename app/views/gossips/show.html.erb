@@ -1,0 +1,10 @@
+<!-- app/views/gossips/show.html.erb -->
+<div class="container">
+  <h1><%= @gossip.title %></h1>
+  <p><%= @gossip.content %></p>
+  <p><strong>Publié par : </strong><%= @gossip.author.first_name %> <%= @gossip.author.last_name %></p>
+  <p><strong>Date de publication :</strong> <%= @gossip.created_at.in_time_zone("Europe/Paris").strftime("%d/%m/%Y à %H:%M") %></p>
+
+  <%= link_to "Retour", root_path, class: "btn btn-primary" %>
+
+</div>

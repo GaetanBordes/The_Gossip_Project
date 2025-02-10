@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Gossip Project</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <!-- Milligram CSS -->
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css', media: 'all' %>
+    
+    <!-- Custom CSS -->
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+
+  <body>
+    <header>
+      <nav class="container">
+        <h1>The Gossip Project</h1>
+        <ul class="menu">
+          <li><%= link_to "Accueil", root_path %></li>
+          <li><%= link_to "Équipe", team_path %></li>
+          <li><%= link_to "Contact", contact_path %></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <%= yield %> <!-- Contenu de chaque page -->
+    </div>
+  </body>
+</html>
