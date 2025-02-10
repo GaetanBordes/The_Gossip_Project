@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_10_100011) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_10_151022) do
   create_table "gossips", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -24,6 +24,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_10_100011) do
     t.string "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "city"
   end
 
   add_foreign_key "gossips", "users", column: "author_id"

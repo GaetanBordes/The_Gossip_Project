@@ -1,0 +1,13 @@
+<h1>Profil de <%= @user.first_name %> <%= @user.last_name %></h1>
+
+<p><strong>Email :</strong> <%= @user.email.present? ? @user.email : "Non renseigné" %></p>
+<p><strong>Ville :</strong> <%= @user.city.present? ? @user.city : "Non renseignée" %></p>
+
+<h2>Ses potins :</h2>
+
+<% @user.gossips.each do |gossip| %>
+  <div class="card">
+    <h3 class="card-title"><%= gossip.title %></h3>
+    <p><%= gossip.content %></p>
+  </div>
+<% end %>
