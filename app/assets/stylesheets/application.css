@@ -1,87 +1,75 @@
 body {
-  background-color: #f4f4f4;
-  color: #333;
-  font-family: 'Arial', sans-serif;
-  padding: 20px;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
 }
 
 h1 {
-  color: #2c3e50;
-  font-size: 2.5rem;
-  text-align: center;
-}
-
-h2 {
-  color: #34495e;
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-.card {
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  margin-bottom: 20px;
-  background-color: #fff;
-}
-
-.card-title {
-  font-size: 1.9rem;
-  color: #2980b9;
-  margin-bottom: 5px;
-}
-
-.card-author {
-  font-size: 1.5rem;
-  color: #7f8c8d;
-}
-
-.button {
-  display: inline-block;
-  padding: 10px 15px;
-  background-color: #3498db;
-  color: white;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.button:hover {
-  background-color: #2980b9;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-input[type="text"], textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 1.2rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  color: #343a40;
 }
 
 .btn-primary {
-  background-color: #27ae60;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
-.btn-primary:hover {
-  background-color: #218c53;
+.link-box {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #007bff; /* Bordure bleue */
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: #007bff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.link-box:hover {
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  position: relative;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: center; /* Centre la barre de navigation */
+  align-items: center;
+}
+
+.d-flex {
+  width: 100%; /* Assure que la barre occupe toute la largeur */
+}
+
+.d-flex .nav-link {
+  margin-right: 30px; /* Augmenter la marge pour plus d'espace entre les liens */
+}
+
+.d-flex .nav-link:last-child {
+  margin-right: 0; /* Pas de marge à droite du dernier lien */
+}
+
+/* Applique des styles de base aux cartes de potins */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px 0;
+  transition: all 0.3s ease; /* Permet une transition douce */
+  cursor: pointer; /* Change le curseur pour montrer que c'est cliquable */
+}
+
+/* Effet au survol : ombre et légère transformation */
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée */
+  transform: scale(1.05); /* Légère augmentation de la taille */
+  background-color: #f8f9fa; /* Change la couleur de fond au survol */
+}
+
+/* Ajouter une légère animation sur les liens au survol */
+.card a:hover {
+  color: #007bff; /* Change la couleur du lien au survol */
+  text-decoration: underline; /* Ajoute une sous-ligne sur les liens au survol */
 }

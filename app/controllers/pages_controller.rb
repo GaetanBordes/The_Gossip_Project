@@ -1,23 +1,11 @@
 class PagesController < ApplicationController
   def welcome
     @first_name = params[:first_name] || "Invité"
-    
-   if request.post?
-      user = User.create(
-        first_name: params[:first_name],
-        last_name: params[:last_name],
-        email: params[:email],
-        city: params[:city]
-      )
-
-    Gossip.create(
-      title: params[:title],
-      content: params[:content],
-      author_id: user.id
-    )
+    @gossips = Gossip.all
   end
 
-    @gossips = Gossip.all
+  def new_gossip
+    # Cette action rendra la vue pour le formulaire de création d'un potin
   end
 
   def publish
@@ -37,7 +25,7 @@ class PagesController < ApplicationController
 
       redirect_to root_path, notice: "Potin publié avec succès !"
     else
-      redirect_to root_path, alert: "Veuillez remplir tous les champs."
+      redirect_to new_gossip_path, alert: "Veuillez remplir tous les champs."
     end
   end
 end
