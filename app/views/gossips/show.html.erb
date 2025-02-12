@@ -1,13 +1,40 @@
-<!-- app/views/gossips/show.html.erb -->
-<div class="container">
-  <h1><%= @gossip.title %></h1>
-  <p><%= @gossip.content %></p>
-  
-  <p><strong>Publié par : </strong><%= @gossip.author.first_name %> <%= @gossip.author.last_name %></p>
-  
-  <!-- Affichage de la date de publication formatée -->
-  <p><strong>Date de publication :</strong> <%= @gossip.created_at.in_time_zone("Europe/Paris").strftime("%d/%m/%Y à %H:%M") %></p>
-  
-  <!-- Lien retour à la page d'accueil -->
-  <%= link_to "Retour", root_path, class: "btn btn-primary" %>
+<div class="container mt-5">
+  <% if @gossip.present? %> <!-- Vérifie si @gossip existe avant d'afficher son contenu -->
+    <h1 class="text-center mb-4"><%= @gossip.title %></h1>
+
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">
+          Publié par <%= link_to "#{@gossip.author.first_name} #{@gossip.author.last_name}", user_path(@gossip.author), class: "text-decoration-none" %>
+        </h5>
+        <p><strong>Contenu du potin:</strong> <%= @gossip.content %></p>
+
+        <p><strong>Ville :</strong>
+          <% if @gossip.author.city.present? %>
+            <%= link_to @gossip.author.city.name, city_path(@gossip.author.city), class: "text-decoration-none" %>
+          <% else %>
+            Ville inconnue
+          <% end %>
+        </p>
+
+        <div class="d-flex justify-content-between mt-4">
+          <%= link_to "Modifier", edit_gossip_path(@gossip), class: "btn btn-warning" %>
+
+          <%= form_with model: @gossip, method: :delete, local: true, html: { class: "d-inline" } do |form| %>
+            <%= form.submit "Supprimer ce potin", class: "btn btn-danger" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section des commentaires -->
+    <h2 class="mt-5">Commentaires</h2>
+    <%= render @gossip.comments %>
+
+    <h3 class="mt-4">Ajouter un commentaire :</h3>
+    <%= render 'comments/form' %>
+
+  <% else %>
+    <p class="text-center text-danger">Ce potin n'existe pas.</p> <!-- Affichage d'un message si @gossip est nil -->
+  <% end %>
 </div>

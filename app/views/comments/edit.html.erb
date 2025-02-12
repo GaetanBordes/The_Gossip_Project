@@ -1,0 +1,12 @@
+<!-- app/views/comments/edit.html.erb -->
+<h1>Modifier le commentaire</h1>
+
+<%= form_with(model: [@gossip, @comment], local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :content, "Contenu" %>
+    <%= form.text_area :content, class: "form-control", value: @comment.content %>
+  </div>
+  <%= form.submit "Mettre à jour le commentaire", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to 'Annuler', @gossip, class: "btn btn-secondary" %>

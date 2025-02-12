@@ -1,0 +1,8 @@
+<!-- app/views/comments/_comment.html.erb -->
+<div class="card mb-2">
+  <div class="card-body">
+    <p class="card-text"><%= comment.content %></p>
+    <p class="card-text"><small class="text-muted">Auteur : <%= comment.user.email %></small></p>
+    <%= link_to 'Modifier', edit_gossip_comment_path(@gossip, comment), class: "btn btn-link p-0" %>
+  </div>
+</div>

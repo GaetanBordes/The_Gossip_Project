@@ -1,0 +1,12 @@
+<h1>Liste des potins</h1>
+
+<% @gossips.each do |gossip| %>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title"><%= gossip.title %></h5>
+      <p class="card-text"><%= gossip.content %></p>
+      <p class="card-text"><small class="text-muted">Écrit par <%= gossip.author.first_name %></small></p>
+      <%= link_to "Voir le potin", gossip_path(gossip), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

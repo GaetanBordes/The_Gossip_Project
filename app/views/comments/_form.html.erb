@@ -1,0 +1,8 @@
+<!-- app/views/comments/_form.html.erb -->
+<%= form_with(model: [@gossip, @gossip.comments.build], local: true, html: { class: "mb-4" }) do |form| %>
+  <div class="form-group">
+    <%= form.label :content, "Contenu", class: "font-weight-bold" %>
+    <%= form.text_area :content, class: "form-control", rows: 3 %>
+  </div>
+  <%= form.submit "Ajouter un commentaire", class: "btn btn-primary" %>
+<% end %>

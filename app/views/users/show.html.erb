@@ -1,0 +1,64 @@
+<!-- app/views/users/show.html.erb -->
+<div class="container mt-5">
+  <div class="row">
+    <!-- Section principale -->
+    <div class="col-md-8 blog-main">
+      <h1 class="pb-4 mb-4 font-italic border-bottom">Profil de <%= @user.first_name %> <%= @user.last_name %></h1>
+
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <h4 class="card-title">Informations personnelles</h4>
+          <p><strong>Email :</strong> <%= @user.email %></p>
+          <p><strong>Ville :</strong> 
+      <% if @user.city.present? %>
+      <%= link_to @user.city.name, city_path(@user.city) %>
+      <% else %>
+        Ville inconnue
+      <% end %>
+          </p>
+          <p><strong>Date de naissance :</strong> <%= @user.birthdate.strftime('%d %B %Y') %></p>
+          <p><strong>Description :</strong> <%= @user.description %></p>
+        </div>
+      </div>
+
+      <h2 class="pb-4 mb-4 font-italic border-bottom">Ses potins :</h2>
+
+      <% @user.gossips.each do |gossip| %>
+        <div class="blog-post">
+          <h3 class="blog-post-title"><%= gossip.title %></h3>
+          <p class="blog-post-meta">
+            Publié le <%= gossip.created_at.strftime('%d %B %Y') %> par <%= @user.first_name %> <%= @user.last_name %>
+          </p>
+          <p><%= truncate(gossip.content, length: 200) %>...</p>
+          <a href="<%= gossip_path(gossip) %>" class="btn btn-outline-primary">Lire la suite</a>
+        </div>
+        <hr>
+      <% end %>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="col-md-4 blog-sidebar">
+      <div class="p-4 mb-3 bg-light rounded">
+        <h4 class="font-italic">À propos</h4>
+        <p class="mb-0">Bienvenue sur le profil de <%= @user.first_name %>. Découvrez ses potins et ses informations personnelles.</p>
+      </div>
+
+      <div class="p-4">
+        <h4 class="font-italic">Archives des potins</h4>
+        <ol class="list-unstyled mb-0">
+          <% @user.gossips.order(created_at: :desc).limit(5).each do |gossip| %>
+            <li><a href="<%= gossip_path(gossip) %>"><%= gossip.title %></a></li>
+          <% end %>
+        </ol>
+      </div>
+
+      <div class="p-4">
+        <h4 class="font-italic">Liens utiles</h4>
+        <ol class="list-unstyled">
+          <li><a href="<%= root_path %>">Accueil</a></li>
+          <li><a href="<%= edit_user_registration_path %>">Modifier mon profil</a></li>
+        </ol>
+      </div>
+    </aside>
+  </div>
+</div>

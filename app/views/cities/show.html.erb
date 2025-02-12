@@ -1,0 +1,23 @@
+<!-- app/views/cities/show.html.erb -->
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Ville : <%= @city.name %></h1>
+
+  <h2 class="border-bottom pb-2 mb-4">Les potins de <%= @city.name %></h2>
+
+  <% if @gossips.any? %>
+    <% @gossips.each do |gossip| %>
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <h3 class="card-title"><%= gossip.title %></h3>
+          <p><%= truncate(gossip.content, length: 150) %>...</p>
+          <p class="text-muted">
+            Publié par <strong><%= gossip.author.first_name %> <%= gossip.author.last_name %></strong>, le <%= gossip.created_at.strftime('%d %B %Y') %>
+          </p>
+          <a href="<%= gossip_path(gossip) %>" class="btn btn-outline-primary">Voir le potin</a>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <p>Aucun potin n’a encore été écrit par les habitants de <%= @city.name %>.</p>
+  <% end %>
+</div>
